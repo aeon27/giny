@@ -46,11 +46,7 @@ func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 }
 
 //运行Engine实例
-func (engine *Engine) Run(addr string) {
-	err := http.ListenAndServe(addr, engine)
-	if err != nil {
-		log.Panicf("[ERROR]Run failed! err: %v", err)
-	} else {
-		log.Printf("Giny is running! Listening and serving HTTP on %s", addr)
-	}
+func (engine *Engine) Run(addr string) error {
+	log.Printf("Giny is Listening and serving on %s\n", addr)
+	return http.ListenAndServe(addr, engine)
 }
