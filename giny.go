@@ -1,6 +1,7 @@
 package giny
 
 import (
+	"log"
 	"net/http"
 	"strings"
 )
@@ -45,6 +46,11 @@ func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 }
 
 //运行Engine实例
-func (engine *Engine) Run(addr string) error {
-	return http.ListenAndServe(addr, engine)
+func (engine *Engine) Run(addr string) {
+	err := http.ListenAndServe(addr, engine)
+	if err != nil {
+		log.Panicf("[ERROR]Run failed! err: %v", err)
+	} else {
+		log.Printf("Giny is running! Listening and serving HTTP on %s", addr)
+	}
 }
