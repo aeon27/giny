@@ -15,7 +15,7 @@ import "github.com/aeon27/giny"
 
 func main() {
 	engine := giny.New()
-  engine.Use(giny.Logger())//为全局使用logger中间件
+	engine.Use(giny.Logger())//为全局使用logger中间件
 	engine.GET("/", func(c *giny.Context) {
 		c.HTML(200, "<h1>Hello Giny!~<h1>")
 	})
