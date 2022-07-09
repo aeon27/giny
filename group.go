@@ -42,7 +42,7 @@ func (group *RouterGroup) Group(prefix string) *RouterGroup {
 func (group *RouterGroup) addRoute(method, subPattern string, handler HandlerFunc) {
 	pattern := group.prefix + subPattern
 	group.router.addRoute(method, pattern, handler)
-	log.Printf("Group: %10s, route: %4s - %20s\n", group.prefix, method, pattern)
+	log.Printf("Group: %s, route: %s - %s\n", group.prefix, method, pattern)
 }
 
 func (group *RouterGroup) GET(pattern string, handler HandlerFunc) {
