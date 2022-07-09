@@ -1,10 +1,10 @@
 # Giny
 
-Giny是一个用Golang开发的，参考Gin实现的Web开发框架，支持基本的Web开发框架的功能，如静态路由、动态路由、路由分组控制、RESTful API和中间件扩展
+Giny是一个用Golang开发的，参考Gin实现的简易Web开发框架，支持基本的Web开发框架的功能，如静态路由、动态路由、路由分组控制、RESTful API和中间件扩展
 
 # 使用帮助
 
-main.go中提供了一些Giny的一些简单的使用范例
+ginyDemo文件夹中的demo.go文件提供了Giny的一些简单的使用范例，仅供参考 :D
 
 # 快速开始
 
