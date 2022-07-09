@@ -17,7 +17,7 @@ func main() {
 	engine := giny.New()
   engine.Use(giny.Logger())//为全局使用logger中间件
 	engine.GET("/", func(c *giny.Context) {
-		c.HTML(http.StatusOK, "<h1>Hello Giny!~<h1>")
+		c.HTML(200, "<h1>Hello Giny!~<h1>")
 	})
 	engine.Run(":9999") //打开浏览器输入 http://localhost:9999/ 可以看到运行效果
 }
