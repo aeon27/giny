@@ -17,6 +17,6 @@ func Logger() HandlerFunc {
 		t := time.Now()
 		// c.String(http.StatusOK, "do something...")
 		c.Next()
-		log.Printf("|| handle: %4s - %25s || Duration: %10s ||\n", c.Method, c.Path, time.Since(t))
+		log.Printf("|| handle: %4s - %20s || status: %v || Duration: %10s ||\n", c.Method, c.Path, c.StatusCode, time.Since(t))
 	}
 }

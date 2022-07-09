@@ -68,9 +68,7 @@ func (n *node) insert(pattern string, parts []string, height int) {
 			part:   part,
 			isWild: part[0] == '*' || part[0] == ':',
 		}
-		// if n.children == nil {
-		// 	n.children = make([]*node, 0)
-		// }
+
 		n.children = append(n.children, child)
 	}
 	//递归插入下一个part节点
@@ -100,15 +98,3 @@ func (n *node) search(parts []string, height int) *node {
 
 	return nil
 }
-
-// 查找所有完整的url，保存到列表中
-// func (n *node) travel(list *([]*node)) {
-// 	if n.pattern != "" {
-// 		// 找到完整路由，将该节点添加入
-// 		*list = append(*list, n)
-// 	}
-// 	for _, child := range n.children {
-// 		// 一层一层地递归查找具有完整路由(pattern != "")的节点
-// 		child.travel(list)
-// 	}
-// }
